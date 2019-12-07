@@ -15,6 +15,7 @@ package com.ilike.voicerecorder.core;
 
 import android.content.Context;
 import android.media.MediaRecorder;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.text.TextUtils;
@@ -85,16 +86,22 @@ public class VoiceRecorder {
                 voiceFileName = getVoiceFileName(System.currentTimeMillis() + "");
             }
 
-            if (!isDirExist()) {
-                /**
-                 * not exist ,so create default folder(/Android/data/包名/chat/voice)
-                 */
-                PathUtil.getInstance().createDirs("chat", "voice", appContext);
+//            if (!isDirExist()) {
+//                /**
+//                 * not exist ,so create default folder(/Android/data/包名/chat/voice)
+//                 */
+//                PathUtil.getInstance().createDirs("chat", "voice", appContext);
+//            }
+            /*4.设置输出文件*/
+            String dirPath = Environment.getExternalStorageDirectory()+"/voice/";
+            File dirFile = new File(dirPath);
+            if (!dirFile.exists()){
+                dirFile.mkdirs();
             }
 
-            voiceFilePath = PathUtil.getInstance().getVoicePath() + "/" + voiceFileName;
+            voiceFilePath = dirPath +"voice_"+ System.currentTimeMillis()+EXTENSION;
             file = new File(voiceFilePath);
-            recorder.setOutputFile(file.getAbsolutePath());
+            recorder.setOutputFile(voiceFilePath);
             recorder.prepare();
             isRecording = true;
             recorder.start();

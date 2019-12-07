@@ -1,4 +1,4 @@
-package com.ilike.voice.utils;
+package com.ilike.voicerecorder.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

@@ -1,4 +1,4 @@
-package com.ilike.voice.service;
+package com.ilike.voicerecorder.service;
 
 import android.app.Service;
 import android.content.Intent;
@@ -9,8 +9,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.ImageView;
 
-
-import com.ilike.voice.R;
+import com.ilike.voicerecorder.R;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.ilike.voice.model;
+package com.ilike.voicerecorder.model;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.ilike.voice.utils;
+package com.ilike.voicerecorder.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
